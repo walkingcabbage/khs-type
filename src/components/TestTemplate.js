@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useStepStateContext } from '../contexts/StepContext';
 
 //836fa9 : dark
 //b39ddb : standard
@@ -17,11 +18,11 @@ const GlobalBlockBox=styled.div`
     margin-bottom: 48px;
     display: flex;
     flex-direction: column;
-    
 
 `;
 
 function TestTemplate({children}) {
+
   return (
     <GlobalBlockBox>
       {children}
