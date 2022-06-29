@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
+import React, {  useState } from 'react'
 import styled from 'styled-components'
 import TestProgress from './TestProgress';
 import TestSurveyAnswer from './TestSurveyAnswer';
 import { surveyList } from '../list/SurveyList';
-import { surveyStepContext } from '../contexts/StepContext';
 
 const TestSurveyBlockStyle=styled.div`
 flex:1;
@@ -18,6 +17,7 @@ align-items: center;
 .SurveyText{
     margin-bottom: 24px;
     font-size: 18px;
+    font-weight: bold;
 }
 
 `;
@@ -25,14 +25,13 @@ align-items: center;
 
 function TestSurveyBlock() {
 
-    const {surveyStep}=useContext(surveyStepContext);
-
+    const [surveyStep, setSurveyStep]=useState(0);
     const sample=surveyList[surveyStep].question;
   return (
     <TestSurveyBlockStyle>
         <p className="SurveyText">{sample}</p>
-    <TestSurveyAnswer/>
-    <TestProgress/>
+    <TestSurveyAnswer props={{surveyStep, setSurveyStep}}/>
+    <TestProgress props={surveyStep}/>
     </TestSurveyBlockStyle>
     
   )

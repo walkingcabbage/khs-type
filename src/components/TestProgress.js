@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Progress} from 'reactstrap'
 import styled from 'styled-components'
-import { surveyStepContext } from '../contexts/StepContext';
 
 const ProgressBlock=styled.div`
 width: 80%;
@@ -20,16 +19,14 @@ p{
 `;
 
 
-function TestProgress() {
-    const {surveyStep}=useContext(surveyStepContext)
-    let result=(100/35)*surveyStep
+function TestProgress({props}) {
+    let result=(100/34)*props+1;
 
     // const onUp=()=>{
     //     setProgress(progress+1);
-    
   return (
     <ProgressBlock>
-        <p>{surveyStep}/35</p>
+        <p>{props+1}/34</p>
 <Progress className='pg' value={result} color='secondary'/>
     </ProgressBlock>
     
