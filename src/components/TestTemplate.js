@@ -8,14 +8,11 @@ import { useStepStateContext } from '../contexts/StepContext';
 
 const GlobalBlockBox=styled.div`
     background: white;
-    width: 480px;
-    height: 640px;
+    width: 390px;
+    height: 844px;
 
-    border-radius: 16px;
     margin: 0 auto;
 
-    margin-top: 64px;
-    margin-bottom: 48px;
     display: flex;
     flex-direction: column;
 

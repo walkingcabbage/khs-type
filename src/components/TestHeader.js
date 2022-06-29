@@ -9,9 +9,9 @@ const HeaderStyle=styled.div`
 padding-left: 32px;
 padding-right: 32px;
 padding-bottom: 24px;
-
+/* 
 border-top-left-radius: 16px;
-border-top-right-radius: 16px;
+border-top-right-radius: 16px; */
 
 h1{
     margin: 0;

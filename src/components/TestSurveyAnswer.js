@@ -15,6 +15,10 @@ justify-content: center;
     .buttonsGroup{
         flex: 1;
     }
+    .btn-default:focus {
+  outline: none;
+  box-shadow: none;
+}
 `;
 
 
@@ -36,7 +40,7 @@ function TestSurveyAnswer({props}) {
     }
 
     const btnGen=surveyList[props.surveyStep].answers.map((props)=>{
-        return <Button color='secondary' outline key={props.id} onClick={(e)=>{onSurvey(props.score, e)}}>{props.text}</Button>
+        return <Button className='btn-default' color='secondary' outline key={props.id} onClick={(e)=>{onSurvey(props.score, e)}}>{props.text}</Button>
     })
 
     return (
